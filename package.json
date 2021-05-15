@@ -1,0 +1,26 @@
+{
+  "name": "chat-app",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^3.4.8",
+    "moment": "^2.29.1",
+    "socket.io": "^0.9.19"
+  },
+  "description": "Simple Chat App with NodeJS, Socket.io and Express\r ==================================================",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/graphicbeacon/Simple-Chat-App-with-NodeJS--Socket.io-and-Express.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/graphicbeacon/Simple-Chat-App-with-NodeJS--Socket.io-and-Express/issues"
+  },
+  "homepage": "https://github.com/graphicbeacon/Simple-Chat-App-with-NodeJS--Socket.io-and-Express#readme"
+}

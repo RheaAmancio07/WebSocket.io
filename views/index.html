@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<title>Node Chat</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Optional theme from http://bootswatch.com/ -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+		integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+		integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+		crossorigin="anonymous"></script>
+	<!-- Custom Theme changes -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- jQuery needed -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified JavaScript -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+
+	<!-- Login input form - takes a name before initiating chat -->
+
+
+	  <div class="container mt-5">
+         <div class="row">
+            <div class="col-sm">
+                <div class="page-header">
+                    <h2 class="text-primary">Welcome to Online Chika</h2>
+                </div>
+                <img src="https://image.freepik.com/free-vector/people-chatting-online-illustration_179970-2658.jpg" alt="..." >
+            </div>
+            <div class="col-sm">
+                <div class="container chat-name-section">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <form class="bs-component" id="chatNameForm">
+                                
+                                <div class="form-group" style="margin-top:200px;">
+                                    <label class="control-label" for="name">Please enter your name</label>
+            
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="name" id="name">
+
+                                        <button class="btn btn-primary"> Enter Chat</button>
+                                    </div>
+            
+                                    <div class="input-group">
+                                        <p><span class="text-danger">Username is already taken!</span></p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+	<!-- <div class="container chat-name-section">
+		<div class="row">
+			<div class="col-lg-12">
+				<form class="bs-component" id="chatNameForm">
+					<div class="page-header">
+						<h2>Welcome to Online Chika</h2>
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="name">Please enter your name</label>
+
+						<div class="input-group">
+							<input type="text" class="form-control" name="name" id="name">
+							<span class="input-group-btn"> <button class="btn btn-success"> Enter Chat</button></span>
+						</div>
+
+						<div class="input-group">
+							<p><span class="text-danger">Username is already taken!</span></p>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div> -->
+
+
+	<!-- Chat header area - contains 'Users Online' count and log of chat messages -->
+	<div class="chat-box-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<h1>Chat App</h1>
+				</div>
+				<div class="col-lg-12">
+					<div class="bs-component">
+						<button class="btn btn-dark" data-toggle="modal" data-target="userslist" id="usersOnlineBtn">
+							Users Online &nbsp;<span class="badge">0</span></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="chat-input-section">
+			<form class="bs-component" id="chatInputForm">
+				<div id="container">
+					<aside>
+						<ul>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_02.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status green"></span>
+										online
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_03.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status orange"></span>
+										offline
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_04.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status green"></span>
+										online
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_05.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status orange"></span>
+										offline
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_06.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status green"></span>
+										online
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_07.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status green"></span>
+										online
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_08.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status green"></span>
+										online
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_09.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status green"></span>
+										online
+									</h3>
+								</div>
+							</li>
+							<li>
+								<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_10.jpg"
+									alt="">
+								<div>
+									<h2>Prénom Nom</h2>
+									<h3>
+										<span class="status orange"></span>
+										offline
+									</h3>
+								</div>
+							</li>
+						</ul>
+					</aside>
+					<main>
+						<header>
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/chat_avatar_01.jpg" alt="">
+							<div>
+								<h2>Chat with Online Chika</h2>
+								<h3>already 1902 messages</h3>
+							</div>
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_star.png" alt="">
+						</header>
+						<ul id="chat">
+							<li class="you">
+								<div class="panel-heading">
+									<div id="user">
+										<!--Hello {user}-->
+									</div>
+								</div>
+								<div class="panel-body " id="chatBox"></div>
+							</li>
+						</ul>
+						<footer>
+							<div>
+
+								<!-- <input class="form-control" id="chatTextBox" placeholder="Type your message">
+
+									<button type="submit" class="btn btn-dark btn-lg btn-block mt-3" id="chatSendBtn"><i
+											class="fa fa-paper-plane" style="font-size:36px;"></i>
+									</button> -->
+								<div class="buttonInside text-center">
+									<span>
+										<input id="chatTextBox" class="form-control-sm" placeholder="Type your message"
+											type="text" style="width:350px;">
+										<button type="submit" class="btn btn-light" id="chatSendBtn"><i
+												class="fa fa-paper-plane text-primary" aria-hidden="true"></i></button>
+									</span>
+								</div>
+
+							</div>
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_picture.png" alt="">
+							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_file.png" alt="">
+
+						</footer>
+					</main>
+				</div>
+			</form>
+		</div>
+	</div>
+
+
+	<!-- Modal Popup for displaying users -->
+	<div class="modal fade bs-example-modal-sm" id="usersBox" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title" id="myModalLabel">Users Online</h4>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- For working with HTML5 audo files -->
+	<script src="//cdnjs.cloudflare.com/ajax/libs/howler/1.1.17/howler.min.js"></script>
+
+	<!--- Automatically generated by Socket.io -->
+	<script src="/socket.io/socket.io.js"></script>
+
+	<!--- Application code -->
+	<script src="/js/chat.js"></script>
+</body>
+
+</html>
